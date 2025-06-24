@@ -5,7 +5,8 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.8.1
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.16.0"
 
 dependencies:
   flutter:
@@ -14,20 +15,18 @@ dependencies:
     sdk: flutter
 
   # UI & Design
-  cupertino_icons: ^1.0.8
-  material_color_utilities: ^0.11.1
-  dynamic_color: ^1.7.0
-  flutter_animate: ^4.5.0
+  cupertino_icons: ^1.0.6
+  material_color_utilities: ^0.8.0
+  dynamic_color: ^1.6.8
+  flutter_animate: ^4.2.0
   shimmer: ^3.0.0
-  lottie: ^3.1.2
-  cached_network_image: ^3.3.1
-  flutter_markdown: ^0.7.3+1
-  markdown: ^7.2.2
+  lottie: ^2.7.0
+  cached_network_image: ^3.2.3
+  flutter_markdown: ^0.6.18
+  markdown: ^7.1.1
 
   # State Management
   provider: ^6.1.2
-  riverpod: ^2.5.1
-  flutter_riverpod: ^2.5.1
 
   # Network & API
   dio: ^5.4.3+1
@@ -47,11 +46,8 @@ dependencies:
   image: ^4.2.0
   path: ^1.9.0
 
-  # Audio & Speech
-  speech_to_text: ^7.0.0
+  # Audio & Speech (simplified)
   flutter_tts: ^4.0.2
-  audioplayers: ^6.0.0
-  record: ^6.0.0
 
   # Utilities
   uuid: ^4.4.0
@@ -78,7 +74,7 @@ dependencies:
   flutter_local_notifications: ^19.3.0
 
   # JSON Serialization
-  json_annotation: ^4.9.0
+  json_annotation: ^4.8.1
 
 dev_dependencies:
   flutter_test:

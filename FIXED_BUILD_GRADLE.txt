@@ -1,13 +1,15 @@
+# محتوى android/app/build.gradle المُصحح
+# انسخ هذا واستبدل محتوى android/app/build.gradle
+
 plugins {
     id "com.android.application"
     id "kotlin-android"
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
 }
 
 android {
     namespace "com.ollama.chat.app"
-    compileSdkVersion 34
+    compileSdk 34
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -34,5 +36,5 @@ android {
 }
 
 flutter {
-    source = "../.."
+    source '../..'
 }

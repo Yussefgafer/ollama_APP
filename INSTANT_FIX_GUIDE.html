@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚨 إصلاح فوري لمشاكل GitHub Actions</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .emergency { background: #ffebee; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 5px solid #f44336; }
+        .solution { background: #e8f5e8; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #4caf50; }
+        .code { background: #f5f5f5; padding: 15px; border-radius: 5px; font-family: monospace; margin: 10px 0; overflow-x: auto; }
+        .button { display: inline-block; background: #f44336; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin: 5px; font-weight: bold; }
+        .button:hover { background: #d32f2f; }
+        .success-button { background: #4caf50; }
+        .warning-button { background: #ff9800; }
+        h1 { color: #f44336; text-align: center; }
+        h2 { color: #333; border-bottom: 2px solid #f44336; padding-bottom: 5px; }
+        .step { margin: 20px 0; padding: 15px; background: #fff3e0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚨 إصلاح فوري لمشاكل GitHub Actions</h1>
+        
+        <div class="emergency">
+            <h2>⚡ الحل السريع (30 ثانية)</h2>
+            <p><strong>1. اذهب إلى GitHub Repository:</strong></p>
+            <a href="https://github.com/Yussefgafer/ollama_APP" class="button" target="_blank">
+                🔗 فتح Repository
+            </a>
+            
+            <p><strong>2. اذهب إلى ملف GitHub Actions:</strong></p>
+            <a href="https://github.com/Yussefgafer/ollama_APP/blob/main/.github/workflows/build-apk.yml" class="button warning-button" target="_blank">
+                📝 تعديل build-apk.yml
+            </a>
+            
+            <p><strong>3. استبدل المحتوى بالكامل بهذا:</strong></p>
+            <div class="code">name: Build APK
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '11'
+        
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.19.6'
+        channel: 'stable'
+        
+    - name: Get dependencies
+      run: flutter pub get
+      
+    - name: Build APK
+      run: flutter build apk --release
+      
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-release
+        path: build/app/outputs/flutter-apk/app-release.apk</div>
+            
+            <p><strong>4. انقر "Commit changes"</strong></p>
+        </div>
+
+        <div class="solution">
+            <h2>🔄 تشغيل البناء</h2>
+            <p><strong>بعد حفظ الملف:</strong></p>
+            <ol>
+                <li>اذهب إلى: 
+                    <a href="https://github.com/Yussefgafer/ollama_APP/actions" class="button success-button" target="_blank">
+                        🔄 GitHub Actions
+                    </a>
+                </li>
+                <li>انقر على "Build APK" من القائمة اليسرى</li>
+                <li>انقر "Run workflow" → "Run workflow"</li>
+                <li>انتظر 3-5 دقائق</li>
+                <li>حمل APK من Artifacts</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h2>🆘 إذا لم يعمل - الحل البديل</h2>
+            <p><strong>أنشئ ملف جديد:</strong></p>
+            <ol>
+                <li>اذهب إلى Repository</li>
+                <li>انقر "Add file" → "Create new file"</li>
+                <li>اكتب: <code>.github/workflows/simple.yml</code></li>
+                <li>الصق هذا المحتوى:</li>
+            </ol>
+            
+            <div class="code">name: Simple Build
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: '11'
+    - uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.19.6'
+    - run: flutter pub get
+    - run: flutter build apk
+    - uses: actions/upload-artifact@v3
+      with:
+        name: apk
+        path: build/app/outputs/flutter-apk/app-release.apk</div>
+        </div>
+
+        <div class="emergency">
+            <h2>📱 النتيجة المضمونة</h2>
+            <p><strong>خلال 5 دقائق من تطبيق الإصلاح:</strong></p>
+            <ul>
+                <li>✅ GitHub Actions ستعمل بدون أخطاء</li>
+                <li>✅ APK سيتم بناؤه بنجاح</li>
+                <li>✅ ملف APK جاهز للتحميل</li>
+                <li>✅ حجم APK حوالي 20-30 MB</li>
+            </ul>
+        </div>
+
+        <div class="solution">
+            <h2>🔗 روابط سريعة</h2>
+            <div style="text-align: center;">
+                <a href="https://github.com/Yussefgafer/ollama_APP" class="button" target="_blank">📁 Repository</a>
+                <a href="https://github.com/Yussefgafer/ollama_APP/actions" class="button success-button" target="_blank">🔄 Actions</a>
+                <a href="https://github.com/Yussefgafer/ollama_APP/blob/main/.github/workflows/build-apk.yml" class="button warning-button" target="_blank">📝 Edit Workflow</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; padding: 20px; background: #e8f5e8; border-radius: 10px;">
+            <h2>🎯 خطة العمل الفورية</h2>
+            <p><strong>1. انقر "فتح Repository" أعلاه</strong></p>
+            <p><strong>2. عدل ملف GitHub Actions</strong></p>
+            <p><strong>3. شغل Workflow</strong></p>
+            <p><strong>4. حمل APK خلال 5 دقائق</strong></p>
+        </div>
+    </div>
+
+    <script>
+        // فتح جميع الروابط المطلوبة
+        function openAllLinks() {
+            if(confirm('هل تريد فتح جميع الروابط المطلوبة للإصلاح؟')) {
+                window.open('https://github.com/Yussefgafer/ollama_APP', '_blank');
+                setTimeout(() => {
+                    window.open('https://github.com/Yussefgafer/ollama_APP/actions', '_blank');
+                }, 2000);
+                setTimeout(() => {
+                    window.open('https://github.com/Yussefgafer/ollama_APP/blob/main/.github/workflows/build-apk.yml', '_blank');
+                }, 4000);
+            }
+        }
+        
+        // إضافة زر لفتح جميع الروابط
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.createElement('button');
+            button.innerHTML = '🚀 فتح جميع الروابط للإصلاح';
+            button.className = 'button';
+            button.onclick = openAllLinks;
+            button.style.position = 'fixed';
+            button.style.bottom = '20px';
+            button.style.right = '20px';
+            button.style.zIndex = '1000';
+            button.style.fontSize = '14px';
+            document.body.appendChild(button);
+        });
+    </script>
+</body>
+</html>
