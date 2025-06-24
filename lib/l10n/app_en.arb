@@ -1,0 +1,53 @@
+{
+  "@@locale": "en",
+  "appTitle": "Ollama Chat",
+  "appDescription": "Professional Flutter app for interacting with Ollama API",
+  
+  "home": "Home",
+  "conversations": "Conversations",
+  "models": "Models",
+  "settings": "Settings",
+  
+  "newChat": "New Chat",
+  "typeMessage": "Type your message here...",
+  "send": "Send",
+  "retry": "Retry",
+  
+  "noConversations": "No conversations yet",
+  "noModels": "No models available",
+  "startNewConversation": "Start a new conversation with AI",
+  
+  "delete": "Delete",
+  "edit": "Edit",
+  "share": "Share",
+  "copy": "Copy",
+  "cancel": "Cancel",
+  "save": "Save",
+  "ok": "OK",
+  
+  "error": "Error",
+  "loading": "Loading...",
+  "success": "Success",
+  "warning": "Warning",
+  
+  "theme": "Theme",
+  "lightMode": "Light",
+  "darkMode": "Dark",
+  "systemMode": "System",
+  
+  "fontSize": "Font Size",
+  "fontFamily": "Font Family",
+  "dynamicColors": "Dynamic Colors",
+  
+  "connectionSettings": "Connection Settings",
+  "serverUrl": "Server URL",
+  "timeout": "Timeout",
+  
+  "security": "Security",
+  "privacy": "Privacy",
+  "backup": "Backup",
+  
+  "about": "About",
+  "version": "Version",
+  "help": "Help"
+}

@@ -1,0 +1,53 @@
+{
+  "@@locale": "ar",
+  "appTitle": "Ollama Chat",
+  "appDescription": "تطبيق Flutter احترافي للتفاعل مع Ollama API",
+  
+  "home": "الرئيسية",
+  "conversations": "المحادثات",
+  "models": "النماذج",
+  "settings": "الإعدادات",
+  
+  "newChat": "محادثة جديدة",
+  "typeMessage": "اكتب رسالتك هنا...",
+  "send": "إرسال",
+  "retry": "إعادة المحاولة",
+  
+  "noConversations": "لا توجد محادثات بعد",
+  "noModels": "لا توجد نماذج متاحة",
+  "startNewConversation": "ابدأ محادثة جديدة مع الذكاء الاصطناعي",
+  
+  "delete": "حذف",
+  "edit": "تعديل",
+  "share": "مشاركة",
+  "copy": "نسخ",
+  "cancel": "إلغاء",
+  "save": "حفظ",
+  "ok": "موافق",
+  
+  "error": "خطأ",
+  "loading": "جاري التحميل...",
+  "success": "تم بنجاح",
+  "warning": "تحذير",
+  
+  "theme": "الثيم",
+  "lightMode": "فاتح",
+  "darkMode": "داكن",
+  "systemMode": "تلقائي",
+  
+  "fontSize": "حجم الخط",
+  "fontFamily": "عائلة الخط",
+  "dynamicColors": "الألوان الديناميكية",
+  
+  "connectionSettings": "إعدادات الاتصال",
+  "serverUrl": "رابط الخادم",
+  "timeout": "مهلة الاتصال",
+  
+  "security": "الأمان",
+  "privacy": "الخصوصية",
+  "backup": "النسخ الاحتياطي",
+  
+  "about": "حول التطبيق",
+  "version": "الإصدار",
+  "help": "المساعدة"
+}

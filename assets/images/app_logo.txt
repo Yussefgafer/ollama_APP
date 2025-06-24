@@ -1,0 +1,5 @@
+# شعار التطبيق
+# يمكن إضافة ملفات الصور هنا
+# app_logo.png
+# app_icon.png
+# splash_screen.png

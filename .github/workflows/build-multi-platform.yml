@@ -1,0 +1,128 @@
+name: 🌐 Build Multi-Platform
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    name: 📱 Build Android
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
+      
+    - name: ☕ Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+        
+    - name: 🐦 Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.32.4'
+        channel: 'stable'
+        
+    - name: 📦 Dependencies
+      run: flutter pub get
+      
+    - name: 🔨 Code Generation
+      run: flutter packages pub run build_runner build --delete-conflicting-outputs
+      
+    - name: 📱 Build APK
+      run: flutter build apk --release --split-per-abi
+      
+    - name: 📤 Upload APKs
+      uses: actions/upload-artifact@v4
+      with:
+        name: android-apks
+        path: build/app/outputs/flutter-apk/*.apk
+
+  build-web:
+    name: 🌐 Build Web
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
+      
+    - name: 🐦 Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.32.4'
+        channel: 'stable'
+        
+    - name: 📦 Dependencies
+      run: flutter pub get
+      
+    - name: 🔨 Code Generation
+      run: flutter packages pub run build_runner build --delete-conflicting-outputs
+      
+    - name: 🌐 Build Web
+      run: flutter build web --release
+      
+    - name: 📤 Upload Web Build
+      uses: actions/upload-artifact@v4
+      with:
+        name: web-build
+        path: build/web/
+
+  create-release:
+    name: 🎉 Create Release
+    needs: [build-android, build-web]
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    
+    steps:
+    - name: 📥 Download Android APKs
+      uses: actions/download-artifact@v4
+      with:
+        name: android-apks
+        path: ./apks
+        
+    - name: 📥 Download Web Build
+      uses: actions/download-artifact@v4
+      with:
+        name: web-build
+        path: ./web
+        
+    - name: 📦 Create Web Archive
+      run: |
+        cd web
+        zip -r ../ollama-chat-web.zip .
+        cd ..
+        
+    - name: 🎉 Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          apks/*.apk
+          ollama-chat-web.zip
+        body: |
+          ## 🚀 Ollama Chat App Release
+          
+          ### 📱 Android APK
+          - Universal APK for all architectures
+          - Split APKs for specific architectures (smaller size)
+          
+          ### 🌐 Web Version
+          - Complete web application
+          - Can be deployed to any web server
+          
+          ### 🔧 Installation
+          1. Download the APK file
+          2. Enable "Unknown Sources" in Android settings
+          3. Install the APK
+          
+          ### 🌟 Features
+          - Modern Material Design 3 UI
+          - Arabic language support
+          - Dark/Light themes
+          - Ollama API integration
+          - Local database storage
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
